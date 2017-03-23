@@ -1,14 +1,14 @@
 def select(array)
   counter = 0
-  return_arr = []
+  result = []
 
   while counter < array.size
-    value = yield(array[counter])
-    value ? return_arr << value : nil
+    current_element = array[counter]
+    result << current_element if yield(current_element)
     counter += 1
   end
 
-  return_arr
+  result
 end
 
 array = [1, 2, 3, 4, 5]
