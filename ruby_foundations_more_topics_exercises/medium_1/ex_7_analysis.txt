@@ -1,0 +1,15 @@
+Group 1 Analysis:
+  - Procs will exit the method they are called in when return is used in them
+
+Group 2 Analysis:
+  - A Proc with a return cannot be defined outside of a method and then passed into it
+
+Group 3 Analysis:
+  - Lambdas with return keywords passed into their blocks will not exit methods they are called in
+
+Group 4 Analysis:
+  - A lambda with a return can be defined outside of a method and then passed into it
+  - The return will be ignored
+
+Group 5 Analysis:
+  - A LocalJumpError will be thrown if returns are passed into blocks with nothing else

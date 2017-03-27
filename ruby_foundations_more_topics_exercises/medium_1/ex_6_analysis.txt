@@ -1,0 +1,34 @@
+Group 1 Analysis:
+  - Proc is a class
+  - Procs take a block with block variables
+  - Procs can be assigned to variables.
+  - When a variable is assigned to a proc it becomes a object of the Proc class
+  - Procs can be called using the Proc#call method
+  - The Proc#call method can take OPTIONAL arguments that are then passed into the block that was defined as block variables
+  - If the Proc requires an argument but no arguemnts is passed, then it returns nil
+
+Group 2 Analysis:
+  - Lambdas are Proc objects
+  - Lambdas care about how many arguments get passed to them
+  - Lambdas will throw argument errors
+  - A Lambda is NOT a class / "Lambda.new" is INVALID CODE
+
+Group 3 Analysis:
+  - The method parameter must be passed into the yield keyword in order for it to bind to the block variable and be used in the block.
+  - If a yield keyword is used, and no block is passed when the method is called, this will throw a LocalJumpError
+
+Group 4 Analysis:
+  - When the method parameter is passed into the yield keyword, the following block variable can then bind itself to that object.
+  - The block does not care how many parameters are passed into it
+  - Extra parameters will simply be assigned to nil
+  - The block variable must be defined within the block pipes or an undefined local variable error will be thrown
+
+Final Analysis
+  - A Proc is a class
+  - Lambdas and Procs are both Proc objects, lambdas are just a different 'flavor'
+  - Both Lambdas and Procs can be assigned to local variables
+  - "Proc.new" is valid code, "Lambda.new" is NOT valid code
+  - Lambdas care about how many arguments get passed to them, Procs do not
+  - A block is NOT a class
+  - Local variables CANNOT be assigned to blocks
+  - 
