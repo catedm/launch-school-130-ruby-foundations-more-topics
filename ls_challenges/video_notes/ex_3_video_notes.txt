@@ -1,0 +1,15 @@
+Problem Solving Steps:
+  - read and understand the description and requirements
+  - scan the test suite and plan out your first phase of implementation to solve the simplest requirements
+  - based on the algorithm given, choose your data structure - what's the most advantageous way to represent the data for this problem?
+  - identify a few 'problem solving patterns' that you can use.
+    - is part of the problem calling for a Regex solution?
+    - is there a map or reduce somewhere?
+    - should you iterate over an array?
+  - write your implementation (and make the tests pass if there are tests)
+  - satisfy the next batch of requirements until all tests pass
+  - refactor if necessary
+
+
+QUEENS PROBLEM:
+  -

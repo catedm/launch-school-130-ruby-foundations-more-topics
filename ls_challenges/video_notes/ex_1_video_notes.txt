@@ -1,0 +1,11 @@
+Problem solving patterns:
+  - if you can see a common pattern like the ones below within the problem,
+    it can often be worthwhile to try out one of the methods that fits in the solution
+  - map: n things -> n other things
+  - reduce: [] -> one_thing
+  - select: m things -> n things
+
+Bullet Takeaways:
+  - If you are not given a test suite in an interview, make sure you consider edge cases
+  - Display thoughtfulness by considering edge cases up front
+  - 
