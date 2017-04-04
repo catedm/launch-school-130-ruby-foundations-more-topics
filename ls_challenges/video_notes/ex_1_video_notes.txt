@@ -8,4 +8,14 @@ Problem solving patterns:
 Bullet Takeaways:
   - If you are not given a test suite in an interview, make sure you consider edge cases
   - Display thoughtfulness by considering edge cases up front
-  - 
+
+How to work with a coding problem:
+  - don't underestimate; resist the urge to dive into code
+  - read the description 3 times; produce an outline if necessary
+  - communicate and clarify
+    - 'what about this input?'
+  - test cases (happy paths, fail paths, edge cases)
+  - have a plan (algorithm), and verify with that
+  - manage your energy
+    - don't try to tackle hardest part of problem last
+  - abstraction (multiple methods)
