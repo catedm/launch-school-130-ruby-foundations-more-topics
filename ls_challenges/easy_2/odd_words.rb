@@ -24,7 +24,7 @@ def odd_words(str)
 end
 
 
-p odd_words("whats the matter with kansas     .") # == "whats eht matter htiw kansas."
+p odd_words("whats the matter with kansas .") # == "whats eht matter htiw kansas."
 # p odd_words("")
 # p odd_words("   .")
 # odd_words("whats the   matter with   tiffaeeeeeeeeeeeeeeny.")

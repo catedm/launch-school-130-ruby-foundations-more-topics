@@ -5,23 +5,52 @@
 # an inventory. Our shop will have customers.
 require 'pry'
 
+module WhammyBar
+  def whammable?
+    true
+  end
+end
+
 class Guitar
   attr_reader :year, :make, :color
   attr_accessor :cost
+
+  @@total_number_of_guitars = 0
 
   def initialize(year, make, color, cost)
     @year = year
     @make = make
     @color = color
     @cost = cost
+    @@total_number_of_guitars += 1
   end
 
   def to_s
     "#{self.class} #{make}. #{color}, #{year}.\n Price: $#{cost}"
   end
+
+  def self.total_number_of_guitars
+    @@total_number_of_guitars
+  end
+
+  # FAKE OPERATOR example
+  # This method will use > to determine which item is more expensive
+  def >(other_item)
+    cost > other_item.cost
+  end
+
+  # CALLING METHODS W/ SELF example
+  # must use self when referencing a setter method from within the class
+  # this allows Rugy to disambiguate between initializing a local variable and calling the setter method
+  # remember: calling self from within an instance method references the calling object
+  def change_color(new_color)
+    self.color = new_color
+  end
 end
 
 class Fender < Guitar
+  include WhammyBar
+
   def initialize(year, make, color, cost)
     super(year, make, color, cost)
   end
@@ -39,7 +68,7 @@ class GuitarShop
 
   def initialize
     @inventory = []
-    @cash = 10000
+    @cash = 100000
   end
 
   def buy_item(item)
@@ -84,19 +113,5 @@ class Customer
   end
 end
 
-class BuildYourEmpire
-  def initialize
-    @shop = Customer.new()
-  end
-
-  def play
-  end
-end
-
 guitar1 = Fender.new(1989, "Stratocastor", "Red", 12000)
-songbird = GuitarShop.new
-songbird.buy_item(guitar1)
-songbird.display_inventory
-bob = Customer.new("Bob", 13000)
-bob.buy_item(guitar1)
-songbird.display_inventory
+p guitar1.whammable?

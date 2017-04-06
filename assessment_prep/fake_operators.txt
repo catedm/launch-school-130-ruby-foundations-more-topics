@@ -1,0 +1,15 @@
+Fake Operators:
+  - '==' only LOOKS like an operator but is actually a METHOD
+    - it LOOKS like an operator because of Ruby's syntactical sugar
+  - This means their functionality can be overridden
+  - This makes Ruby both powerful and dangerous because the code "obj1 + obj2" can have a world of meaning
+
+  - When implementing 'fake operator' methods into custom classes, one should follow the standard Ruby library conventions, otherwise our code will be very confusing
+  - For example:
+
+      - Fixnum#+: increments the value by value of the argument, returning a new integer
+      - String#+: concatenates with argument, returning a new string
+      - Array#+: concatenates with argument, returning a new array
+      - Date#+: increments the date in days by value of the argument, returning a new date
+
+    - All of these methods return the same object type that they began with. See Team example for more detail.
