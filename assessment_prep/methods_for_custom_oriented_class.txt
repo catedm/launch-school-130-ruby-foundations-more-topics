@@ -1,0 +1,40 @@
+Why use custom methods for collection oriented classes?
+
+TodoList#each:
+
+  - Why go through the trouble of implementing a way to iterate through items in a
+    TodoList when we already have a way?
+
+  - Can't we just expose the @todos array and
+    let users of our class iterate through that array directly?
+
+  - Take a look at the PROPER / IMPROPER implementations in methods_for_custom_oriented_class.rb
+    - Pay specific attention to the method calls: list.each vs list.todos.each
+    - In the first case, we're calling TodoList#each
+    - In the second case we're calling Array#each
+
+  - We are going to prefer to work with instances of the class TodoList, in this case "list"
+  - We would rather not access an internal state of the TodoList, which in this case is @todos.
+
+  - This is the idea behind ENCAPSULATION
+    - We want to hide implementation details from users of the TodoList class,
+    - We do not want users of this class to reach into its internal state (@todos)
+    - We want users of the class to use the interfaces (ie, public methods) we created for them.
+
+  - Consider our TodoList#add method
+    - This method contains a rule that throws an error if used incorrectly (item must be instance_of Todo class)
+    - If we used the Array#each method here instead, that rule obviously becomes void
+
+  - Consider our TodoList#each method again
+    - What if later on we no longer want the collection object to be an array?
+    - Because we have our custom TodoList#each method, we can figure out how to iterate over the
+      new type of collection within the class
+    - This will result in the user feeling no change
+    - The method will still behave the same to users of the TodoList class
+      - However, if users of the TodoList class had instead reached into the @todos
+        variable directly (by way of using the getter method), then their code will break.
+
+    SUMMARY
+      - The entire goal of creating a class and encapsulating logic in a class is to hide implementation
+        details and contain ripple effects when things change.
+      - Prefer to use the class's interface where possible.

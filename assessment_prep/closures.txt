@@ -1,0 +1,21 @@
+Closure & Binding
+
+  - A block is how Ruby implements the idea of a closure
+  - Closure: a 'chunk of code' to be passed around to be executed at a later time
+  - In order for this 'chunk of code' to be executed later it must understand the context from which it
+    was initialized
+  - In Ruby, this 'chunk of code' or closure is represented by a Proc object
+
+closures.rb example notes:
+
+  - How do this code know how to process the 'name' variable?
+  - The Proc object is pre-processed
+  - This implies that the Proc keeps track of its surrounding context, and drags it around wherever the chunk of code is passed into
+  - In Ruby, we call this its BINDING, or surrounding environment / context
+  - Closures must keep track of their surrounding context in order to have all the info it needs to be executed later
+    - This includes variables, references, constants and other artifacts
+
+SUMMARY:
+
+  - This is at the core of variable scoping rules in Ruby
+  - This is why "inner scopes can access outer scopes"
