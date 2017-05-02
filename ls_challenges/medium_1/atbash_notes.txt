@@ -1,0 +1,2 @@
+if encode_word.size > 3
+  - add spaces after every 5th letter

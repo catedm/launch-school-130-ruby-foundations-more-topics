@@ -1,0 +1,18 @@
+input: string
+output: string
+
+rules:
+  - if word begins with vowel, add an 'ay' to the end of the word
+  - if word begins with a consonant, move it to the end of the word and add 'ay' after it
+
+edge cases
+  - if 'ch', move 'ch' move to back + 'ay'
+  - if 'qu', move 'qu' move to back + 'ay'
+  - if consonant followed by 'qu', move 'consonant + qu' move to back + 'ay'
+  - if 'th', move to back + 'ay'
+  - if 'thr', move to back + 'ay'
+  - if 'sch', move to back + 'ay'
+  - if 'ye', leave 'e' at front and move 'y' to back + 'ay'
+  - if 'yt', just add 'ay'
+  - if 'xe',  leave 'e' at front and move 'x' to back + 'ay'
+  - if 'xr',  leave 'x' at front and move 'x' to back + 'ay'

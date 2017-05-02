@@ -1,3 +1,2 @@
   - In Ruby, booleans are represented by true and false objects
   - Logical operators are comparison operators and will return a boolean when comparing two expressions
-  - 

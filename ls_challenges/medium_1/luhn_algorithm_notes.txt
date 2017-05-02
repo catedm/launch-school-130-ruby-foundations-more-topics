@@ -1,0 +1,28 @@
+input: number
+output: depend on the method
+
+Luhn Formula:
+  - double the value of every second digit from the right moving left
+  - for any digits that thus become > 10 subtract 9 from the result
+  - add all of the digits together for the checksum
+  - valid checksum?
+    - if checksum % 10 == 0: valid checksum
+    - else, not valid checksum
+
+4 methods
+  1. 'addends' - return array with each transformed num per the Luhn formula
+  2. 'valid' - check if number is valid. return true or false
+  3. 'checksum' - returns the checksum or the remainder using the Luhn method
+  4. 'create' - can add a checkdigit to make the number valid per the Luhn formula
+              - return the original num plus the num that will make it valid
+
+
+- 8763 becomes 7733 (from 2×6=12 → 12-9=3 and 2×8=16 → 16-9=7)
+- 7 + 7 + 3 + 3 = 20
+
+Luhn formula algorithm (checksum method):
+  - split the num
+  - iterate with index, reverse?
+  - double every 2nd digit
+    - subtract 9 if num > 10
+  - reduce final array
